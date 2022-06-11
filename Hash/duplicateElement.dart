@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 void main(List<String> args) {
   var arr = [1, 6, 4, 3, 2, 8, 6];
   var set = HashSet<int>();
