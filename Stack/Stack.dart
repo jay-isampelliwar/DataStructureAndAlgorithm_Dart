@@ -49,7 +49,7 @@ class Stack<E> {
 }
 
 void main(List<String> args) {
-  Stack<String> st = new Stack();
+  Stack<int> st = new Stack();
   st.push(5);
   st.push(2);
   print("size is : ${st.size}");

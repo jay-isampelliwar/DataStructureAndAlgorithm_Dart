@@ -1,20 +1,16 @@
-class Node {
-  int? data;
+class Node<E> {
+  Node({required this.data, this.next});
+  E? data;
   Node? next;
-
-  Node(int data) {
-    this.data = data;
-    this.next = null;
-  }
 }
 
-class LinkedList {
+class LinkedList<E> {
   Node? head;
   Node? tail;
   int size = 0;
 
-  void add(int data) {
-    Node node = new Node(data);
+  void add(E data) {
+    Node node = new Node(data: data);
     size += 1;
 
     if (head == null) {
@@ -30,13 +26,13 @@ class LinkedList {
     }
   }
 
-  int? remove(int index) {
+  E? remove(int index) {
     if (head == null) return null;
 
     if (index <= 0 || index > size) return null;
 
     size -= 1;
-    int? data;
+    E? data;
 
     if (index == 1) {
       data = head!.data;
@@ -66,7 +62,7 @@ class LinkedList {
 }
 
 void main(List<String> args) {
-  LinkedList list = new LinkedList();
+  LinkedList<int> list = new LinkedList();
 
   list.add(23);
   list.add(26);
