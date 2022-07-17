@@ -6,8 +6,8 @@ void main(List<String> args) {
   List<String> ans = [];
 
   String a = "";
-  String b = "";
 
+  String b = "";
   for (int i = 1; i <= n; i++) {
     List<int> temp = [i + 48];
     a += asciiCodec.decode(temp);
