@@ -38,8 +38,7 @@ class LinkedList<E> {
 
 void main(List<String> args) {
   LinkedList<int> list = new LinkedList();
-  List<int> list_ele = [2, 2, 4, 5];
-  // List<int> list_ele = [2, 2, 2, 2];
+  List<int> list_ele = [1, 1, 2, 3, 3, 3, 4, 5, 6, 10, 10];
   list_ele.forEach((element) {
     list.add(element);
   });
@@ -47,16 +46,29 @@ void main(List<String> args) {
   Solution s = new Solution();
   Node? head = list.head;
   s.removeDuplicates(head);
+  list.printList();
 }
 
 class Solution {
-  Node removeDuplicates(Node? head) {
-    Node? temp = head!;
+  Node? removeDuplicates(Node? head) {
+    if (head == null) return null;
+    if (head.next == null) return head;
+    Node? cur = head;
+    Node? next = head.next;
 
-    while (temp != null) {
-      print(temp.data);
-      temp = temp.next ?? null;
+    while (next != null) {
+      if (cur!.data == next.data) {
+        next = next.next;
+      } else {
+        cur.next = next;
+        cur = cur.next;
+        next = next.next;
+      }
     }
+
+    cur!.next = next;
+    cur = cur.next;
+
     return head;
   }
 }
