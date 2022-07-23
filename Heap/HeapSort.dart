@@ -1,5 +1,6 @@
 void main(List<String> args) {
   List<int> arr = [-1, 4, 7, 0, 2, -3, -3, -1, 5, -99, -30, -32];
+  //Ignore the 0th index.
 
   int n = arr.length - 1;
   Solution s = new Solution();
